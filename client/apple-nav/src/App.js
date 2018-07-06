@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
 import NavWrapper from './components/NavWrapper';
-import styled from 'styled-components';
+import { Route } from 'react-router-dom';
+import SubNav from './components/SubNav';
 
 // Fontawesome imports for apple logo 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -11,24 +11,14 @@ import { faSearch, faClipboard } from '@fortawesome/free-solid-svg-icons';
 
 library.add(fab, faSearch, faClipboard);
 
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      items: [],
-    };
-  }
-
-  componentDidMount() {
-    
-  }
-  render() {
+const App = () => {
     return (
       <div className="App">
-        <NavWrapper />
+        <Route path="/" component={NavWrapper} />
+        <Route exact path="/:name" component={SubNav}/>
       </div>
     );
   }
-}
+
 
 export default App;
