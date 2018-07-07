@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import data from '../apple-data';
 import { StyledWrapper } from './reusable-styles/Reusables.js';
-
-const StyledImg = styled.img`
-    color: white;
-`;
+import NavItem from './NavItem';
 
 export default class SubNav extends React.Component {
     constructor(props){
@@ -43,8 +40,8 @@ export default class SubNav extends React.Component {
             <div>
                 <StyledWrapper>
                     {this.state.dataIn.map(item => {
-                        return <StyledImg src={item.pic} alt="apple Products" key={Math.random() + Date.now()} />
-                        })}
+                        return <NavItem item={item} key={Math.random() + Date.now()} />
+                        })};
                 </StyledWrapper>
             </div>
         );
