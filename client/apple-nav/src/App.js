@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import NavWrapper from './components/NavWrapper';
 import { Route } from 'react-router-dom';
@@ -15,7 +15,7 @@ const App = () => {
     return (
       <div className="App">
         <Route path="/" component={NavWrapper} />
-        <Route exact path="/:name" component={SubNav}/>
+        <Route path="/:name" component={SubNav}/>
       </div>
     );
   }
